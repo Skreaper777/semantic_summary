@@ -1,6 +1,8 @@
 
 📁 Папка: [корень проекта]
 
+📁 Папка: test
+
   📄 Файл: agent.py
     def __init__(self, x, y):
     def get_vision_params(self):
@@ -73,40 +75,6 @@
     from agent import Agent
     import world
     from ui import (
-
-  📄 Файл: semantic_summary.py
-    def is_relevant_line(line):
-    🔸 Локальные переменные:
-      - stripped
-    def extract_semantic_structure(root_path, output_file="semantic_summary.txt", copy_to_clipboard=False):
-    🔸 Локальные переменные:
-      - summary
-      - rel_dir
-      - rel_dir
-      - file_path
-      - lines
-      - inside_function
-      - function_indent
-      - function_variables
-      - semantic_headings
-      - stripped
-      - function_variables
-      - inside_function
-      - function_indent
-      - current_indent
-      - inside_function
-      - function_variables
-      - left
-      - result
-    import os
-    import re
-    import sys
-    import argparse
-    import pyperclip
-    CLIPBOARD_AVAILABLE = True
-    CLIPBOARD_AVAILABLE = False
-    def is_relevant_line(line):
-    def extract_semantic_structure(root_path, output_file="semantic_summary.txt", copy_to_clipboard=False):
 
   📄 Файл: ui.py
     def draw_speed_buttons(screen, font, button_rects, active_label):

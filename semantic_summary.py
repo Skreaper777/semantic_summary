@@ -23,6 +23,8 @@ def is_relevant_line(line):
 def extract_semantic_structure(root_path, output_file="semantic_summary.txt", copy_to_clipboard=False):
     summary = []
 
+    current_script_path = os.path.abspath(sys.argv[0])
+
     for dirpath, dirnames, filenames in os.walk(root_path):
         # 🧼 Пропускаем скрытые папки
         dirnames[:] = [d for d in dirnames if not d.startswith(".")]
@@ -34,6 +36,11 @@ def extract_semantic_structure(root_path, output_file="semantic_summary.txt", co
         for filename in sorted(filenames):
             if filename.endswith(".py"):
                 file_path = os.path.join(dirpath, filename)
+
+                # ⛔ Пропускаем сам скрипт
+                if os.path.abspath(file_path) == current_script_path:
+                    continue
+
                 summary.append(f"\n  📄 Файл: {filename}")
                 try:
                     with open(file_path, 'r', encoding='utf-8') as f:
